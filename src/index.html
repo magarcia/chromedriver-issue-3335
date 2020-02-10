@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Parent Document</title>
+  </head>
+  <body>
+    <button id="change-message-btn">Change message</button>
+    <p><b>message:</b> <span id="message">Original message</span></p>
+    <div id="iframe-container">
+      <iframe id="childframe" src="/iframe.html"></iframe>
+    </div>
+  </body>
+
+  <script>
+    function bindButton() {
+      var messageButton = document.getElementById("change-message-btn");
+      var messageContainer = document.getElementById("message");
+
+      messageButton.addEventListener("click", function() {
+        messageContainer.innerHTML = "Button updated message";
+      });
+    }
+
+    function destroyIframe() {
+      var iframeContainer = document.getElementById("iframe-container");
+      iframeContainer.innerHTML = "Iframe has been destroyed";
+    }
+    window.onload = function() {
+      bindButton();
+      window.addEventListener("message", destroyIframe, false);
+    };
+  </script>
+</html>

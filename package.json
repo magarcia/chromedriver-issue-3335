@@ -1,0 +1,18 @@
+{
+  "name": "chromedriver-issue-3335",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm run serve",
+    "serve": "http-server src/",
+    "test": "jest"
+  },
+  "author": "Martin Garcia <newluxfero@gmail.com>",
+  "dependencies": {
+    "chromedriver": "^80.0.0",
+    "http-server": "^0.12.1",
+    "jest": "^25.1.0",
+    "selenium-webdriver": "^4.0.0-alpha.5"
+  }
+}
